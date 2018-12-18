@@ -1,5 +1,6 @@
 # Player De Musica Textual
 Um player de musica apartir de um texto formatado, desenvolvido para disciplina de Técnica de Construção de Programas em Java
+
 **Execução:**
   - Baixe o projeto entre na pasta 'dist' e execute 'Player_de_Musica_Textual.jar'
   - Interface:
