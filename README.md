@@ -1,7 +1,7 @@
 # Gerador De Musica Textual
 O objetivo desse software é a implementação, teste e depuração de um gerador de música a partir de texto, o programa recebe um texto (a princípio, um texto livre) como entrada e gera (informalmente, ´toca´ via acionamento de funções de som) um conjunto de notas correspondentes ao texto segundo alguns parâmetros.
 
-##**Execução:**
+##Execução:
   - Baixe o projeto, entre na pasta 'dist' e execute 'Player_de_Musica_Textual.jar'
   - Interface:
       - Area de texto, um JTextArea onde digitamos o texto que será tocado (respeitando as especificações indicadas abaixo no campo "Especificações").
@@ -11,5 +11,5 @@ O objetivo desse software é a implementação, teste e depuração de um gerado
       - Oitava um JSpinner usado para indicar a oitava incial da musica.
       - Botão Play executa o texto digitado na area reservada para a digitação do texto.
       
-##**Especificações:**
+##Especificações:
   - O texto a ser digitado terá como criterio de geração de musica as seguintes especificações:
