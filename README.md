@@ -18,6 +18,6 @@ O objetivo desse software é a implementação, teste e depuração de um gerado
 ![especificacao](https://user-images.githubusercontent.com/44712765/50199203-af8ecf00-0336-11e9-884a-3fca1ade40bd.PNG)
 
 ### **Observações:**
-  - Caso queira personalizar e/ou alterar o software fique atento as seguintes informações:
-    - No projeto utilizamos a biblioteca JFugue versão 4.0.3.
+  - Caso deseje personalizar o software fique atento as seguintes informações:
+    - No projeto foi utilizada a biblioteca JFugue versão 4.0.3.
     - Em caso de alteração e/ou personalização dos codigos fontes, não nos responsabilizamos por qualquer tipo de dano causado.
