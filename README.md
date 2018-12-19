@@ -1,4 +1,4 @@
-# Player De Musica Textual
+# Gerador De Musica Textual
 O objetivo desse software é a implementação, teste e depuração de um gerador de música a partir de texto, o programa recebe um texto (a princípio, um texto livre) como entrada e gera (informalmente, ´toca´ via acionamento de funções de som) um conjunto de notas correspondentes ao texto segundo alguns parâmetros.
 
 **Execução:**
