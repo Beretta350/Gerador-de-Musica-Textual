@@ -30,14 +30,7 @@ public class InterfaceDeSalvar extends javax.swing.JFrame {
     {        
         this.texto_traduzido = texto_salvar;
     }
-    
-    public void testa_Vazio(String texto)
-    {
-        if("".equals(texto) || texto == null || "Digite sua música...".equals(texto))
-        {
-            JOptionPane.showMessageDialog(this, "O texto está vazio", "WARNING!", JOptionPane.WARNING_MESSAGE, null);
-        }
-    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

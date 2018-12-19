@@ -162,7 +162,6 @@ public class Interface extends javax.swing.JFrame
     }// </editor-fold>//GEN-END:initComponents
     
     private static String texto_traduzido = new String();
-    private static String areatexto = new String();
     
     private void botaoExecutaAcao(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoExecutaAcao
         
@@ -181,9 +180,18 @@ public class Interface extends javax.swing.JFrame
     }//GEN-LAST:event_botaoExecutaAcao
 
     private void botaoSalvarAcao(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSalvarAcao
+        testa_Vazio(areadetexto.getText());
         abreInterfaceDeSalvar();
     }//GEN-LAST:event_botaoSalvarAcao
-
+    
+        public void testa_Vazio(String texto)
+    {
+        if("".equals(texto) || texto == null || "Digite sua música...".equals(texto))
+        {
+            JOptionPane.showMessageDialog(this, "O texto está vazio", "WARNING!", JOptionPane.WARNING_MESSAGE, null);
+        }
+    }
+    
     private void instrumentosAlteraEstado(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_instrumentosAlteraEstado
         //int valor = (int) instrumentos.getValue();
         switch((int) instrumentos.getValue())
@@ -289,7 +297,6 @@ public class Interface extends javax.swing.JFrame
     private static void abreInterfaceDeSalvar()
     {   
        InterfaceDeSalvar frame = new InterfaceDeSalvar(); 
-       frame.testa_Vazio(Interface.areatexto);
        frame.set_Texto(Interface.texto_traduzido);
        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
        frame.setVisible(true);
