@@ -13,3 +13,5 @@ O objetivo desse software é a implementação, teste e depuração de um gerado
       
 **Especificações:**
   - O texto a ser digitado terá como criterio de geração de musica as seguintes especificações:
+  
+![especificacao](https://user-images.githubusercontent.com/44712765/50199203-af8ecf00-0336-11e9-884a-3fca1ade40bd.PNG)
