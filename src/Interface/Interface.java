@@ -109,6 +109,7 @@ public class Interface extends javax.swing.JFrame
             }
         });
 
+        botaoparar.setBackground(new java.awt.Color(255, 255, 255));
         botaoparar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pararIconeBlack.png"))); // NOI18N
         botaoparar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
