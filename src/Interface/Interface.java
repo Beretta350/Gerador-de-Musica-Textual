@@ -1,6 +1,5 @@
 package Interface;
 import controle.musica.Tocador;
-import java.awt.Color;
 import traduz.campotexto.Tradutor;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -12,7 +11,6 @@ public class Interface extends javax.swing.JFrame
     public Interface() 
     {
         initComponents();
-        getContentPane().setBackground(Color.DARK_GRAY);
         botaopause.setEnabled(false);
         botaoparar.setEnabled(false);
     }
@@ -39,11 +37,6 @@ public class Interface extends javax.swing.JFrame
         setTitle("Gerador de Musica Textual");
         setBackground(new java.awt.Color(51, 51, 51));
         setForeground(new java.awt.Color(204, 204, 204));
-        addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                formPropertyChange(evt);
-            }
-        });
 
         areadetexto.setColumns(20);
         areadetexto.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
@@ -94,9 +87,9 @@ public class Interface extends javax.swing.JFrame
         textooitava.setText("Oitava");
         textooitava.setToolTipText("");
 
-        botaoplay.setBackground(new java.awt.Color(153, 153, 153));
+        botaoplay.setBackground(new java.awt.Color(255, 255, 255));
         botaoplay.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        botaoplay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/playIcone.png"))); // NOI18N
+        botaoplay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/playIconeBlack.png"))); // NOI18N
         botaoplay.setMaximumSize(new java.awt.Dimension(100, 100));
         botaoplay.setMinimumSize(new java.awt.Dimension(100, 100));
         botaoplay.setPreferredSize(new java.awt.Dimension(100, 100));
@@ -106,8 +99,9 @@ public class Interface extends javax.swing.JFrame
             }
         });
 
+        botaopause.setBackground(new java.awt.Color(255, 255, 255));
         botaopause.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        botaopause.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pauseIcone.png"))); // NOI18N
+        botaopause.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pauseIconeBlack.png"))); // NOI18N
         botaopause.setPreferredSize(new java.awt.Dimension(70, 25));
         botaopause.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,8 +109,7 @@ public class Interface extends javax.swing.JFrame
             }
         });
 
-        botaoparar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        botaoparar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pararIcone.png"))); // NOI18N
+        botaoparar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pararIconeBlack.png"))); // NOI18N
         botaoparar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaopararActionPerformed(evt);
@@ -141,7 +134,7 @@ public class Interface extends javax.swing.JFrame
                         .addComponent(botaopause, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(botaoparar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -191,11 +184,10 @@ public class Interface extends javax.swing.JFrame
                             .addComponent(textooitava)))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(botaoparar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(botaopause, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(botaoplay, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botaopause, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botaoplay, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botaoparar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(22, 22, 22)
                         .addComponent(botaosalvar)
                         .addGap(4, 4, 4)))
@@ -332,7 +324,17 @@ public class Interface extends javax.swing.JFrame
                 textoinstrumentos.setText("Acoustic Grand Piano");                
         }
     }//GEN-LAST:event_instrumentosAlteraEstado
-        
+      
+    private void Traduzir(Tradutor trad)
+    {   
+        trad.set_String(areadetexto.getText());
+        trad.set_Oitava((int) oitava.getValue());
+        trad.set_Bpm((int) bpms.getValue());
+        trad.set_Instrumento((int) instrumentos.getValue());
+        trad.set_Volume((int) volume.getValue());
+        Interface.texto_traduzido = trad.traduz_musica();
+    }
+    
     private void botaoplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoplayActionPerformed
         boolean resume = tocador.estado();
         if(resume == true)
@@ -358,20 +360,11 @@ public class Interface extends javax.swing.JFrame
                 botaoplay.setSelected(false);
                 botaoplay.setEnabled(true);
                  };
+            
             Thread thread = new Thread(r);
             thread.start();
         }
     }//GEN-LAST:event_botaoplayActionPerformed
-    
-    private void Traduzir(Tradutor trad)
-    {   
-        trad.set_String(areadetexto.getText());
-        trad.set_Oitava((int) oitava.getValue());
-        trad.set_Bpm((int) bpms.getValue());
-        trad.set_Instrumento((int) instrumentos.getValue());
-        trad.set_Volume((int) volume.getValue());
-        Interface.texto_traduzido = trad.traduz_musica();
-    }
     
     private void botaopauseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaopauseActionPerformed
         tocador.pausa_Musica();
@@ -384,14 +377,9 @@ public class Interface extends javax.swing.JFrame
         tocador.parar_Musica();
         botaoplay.setSelected(false);
         botaoplay.setEnabled(true);
-        botaoparar.setSelected(false);
         botaopause.setEnabled(false);
         botaoparar.setEnabled(false);
     }//GEN-LAST:event_botaopararActionPerformed
-
-    private void formPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_formPropertyChange
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formPropertyChange
         
     public static void main(String args[]) 
     {
