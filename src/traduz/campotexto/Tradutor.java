@@ -3,7 +3,7 @@ public class Tradutor
 {
 
 	private static int OITAVA_DEFAULT = 5;
-	private static int VOLUME_MAXIMO = 16383;
+	private static final int VOLUME_MAXIMO = 16383;
 	private int oitava = 5;
 	private int volume = 8191;
 	private int BPM = 120;
@@ -12,10 +12,15 @@ public class Tradutor
 	private String string_musical_traduzida = "";
 	private String caractere_atual = "";
 
-	public Tradutor(String string_musical) 
+	public Tradutor() 
 	{
-            this.string_musical = string_musical;
+            
 	}
+        
+        public void set_String(String string_musical)
+        {
+            this.string_musical = string_musical;
+        }
         
          public void set_Oitava(int oitava_selecionada)
         {
@@ -144,7 +149,8 @@ public class Tradutor
 	if ((this.volume + quantidade_de_volume_aumentado) <= Tradutor.VOLUME_MAXIMO) 
 	{
             this.volume += quantidade_de_volume_aumentado;
-	} else 
+	} 
+        else 
 	{
             this.volume = Tradutor.VOLUME_MAXIMO;
 	}

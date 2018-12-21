@@ -99,7 +99,7 @@ public class InterfaceDeSalvar extends javax.swing.JFrame {
         {   
             if("".equals(nome_do_arquivo.getText()) || "Digite o nome do arquivo...".equals(nome_do_arquivo.getText()) || nome_do_arquivo.getText() == null)
             {
-                JOptionPane.showMessageDialog(this, "Nome para o arquivo a ser salvo não foi informado.", "ERRO!", JOptionPane.ERROR_MESSAGE, null);
+                JOptionPane.showMessageDialog(this, "Nome para o arquivo a ser salvo não informado.", "ERRO!", JOptionPane.ERROR_MESSAGE, null);
             }
             else
             {
